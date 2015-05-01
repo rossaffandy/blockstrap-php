@@ -40,6 +40,8 @@ The BlockAuth module currently provides the following __public__ functions:
 
 The API Module is required for the __check__ function to work.
 
+The DNKey Module s required for the __login__ function to work.
+
 ### Cache Module
 
 The cache module currently provides the following __public__ functions:

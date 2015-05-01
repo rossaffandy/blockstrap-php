@@ -1,8 +1,8 @@
 ## Blockstrap PHP SDK
 
-The long-term plans for all of our SDKs is to recreate the full-functionality of our [HTML5 Framework](http://github.com/blockstrap/framework).
+The long-term plan for all of our SDKs is to recreate the full-functionality of our [HTML5 Framework](http://github.com/blockstrap/framework).
 
-For now, the following modules exist:
+For now, the following PHP modules exist:
 
 * __blockstrap__ (core)
 * __api__ (requires blockstrap and cache)
@@ -30,6 +30,8 @@ The API module currently provides the following __public__ functions:
 * __market__ (mapped to market/stats)
 * __relay__ (mapped to transaction/relay)
 * __transaction__ (mapped to transaction/id)
+
+The Cache Module is required for all external API calls.
 
 ### BlockAuth Module
 

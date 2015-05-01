@@ -15,7 +15,7 @@ For now, the following modules exist:
 Blockstrap core currently provides the following __public__ functions:
 
 * __debug__ (prettier object prints)
-* __get_var__ (better $_GET functionality)
+* __get_var__ (better $_POST / $_GET functionality)
 
 ### API Module
 

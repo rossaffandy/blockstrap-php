@@ -2,8 +2,12 @@
 <link rel="stylesheet" href="examples/assets/css/console.css" type="text/css" media="screen" />
 
 <a href="http://blockstrap.com" class="logo">Blockstrap</a>
+<h6 style="text-align: center;">BLOCKSTRAP PHP SDK</h6>
 
-<h1>PHP SDK / API CONSOLE TESTS</h1>
+<p class="clearfix">&nbsp;</p>
+<hr>
+
+<h1>API Console</h1>
 
 <form class="api-examples">  
     <div class="col-sm-4">

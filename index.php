@@ -21,6 +21,7 @@ include_once(dirname(__FILE__).'/modules/blockstrap.php');
 include_once(dirname(__FILE__).'/modules/api.php');
 include_once(dirname(__FILE__).'/modules/cache.php');
 include_once(dirname(__FILE__).'/modules/dnkey.php');
+include_once(dirname(__FILE__).'/modules/blockauth.php');
 
 // INITIATE API
 $api = new bs_api();
@@ -37,7 +38,7 @@ $results = 'Waiting for Query ID. Try making an API call to the following Bitcoi
 include_once(dirname(__FILE__).'/examples/console.php');
 
 // CHECK FOR AND CALL FUNCTION
-if(method_exists($api, $function))
+if(method_exists($api, $function) && ($function == 'dnkey' || $id))
 {
     $results = $api->$function(array(
         'chain' => $chain, // Choose from 8 supported chains
@@ -48,3 +49,6 @@ if(method_exists($api, $function))
 
 // DISPLAY RESULTS
 $api->debug($results);
+
+// DEFAULT EXAMPLE CONTENT AND STYLING
+include_once(dirname(__FILE__).'/examples/blockauth.php');

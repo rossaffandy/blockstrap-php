@@ -42,7 +42,11 @@ class blockstrap
     public function get_var($variable, $default = false)
     {
         $value = $default;
-        if(isset($variable) && isset($_GET) && isset($_GET[$variable]))
+        if(isset($variable) && isset($_POST) && isset($_POST[$variable]))
+        {
+            $value = $_POST[$variable];
+        }
+        elseif(isset($variable) && isset($_GET) && isset($_GET[$variable]))
         {
             $value = $_GET[$variable];
         }

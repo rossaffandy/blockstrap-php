@@ -6,6 +6,7 @@ For now, the following modules exist:
 
 * __blockstrap__ (core)
 * __api__ (requires blockstrap and cache)
+* __cache__ (uses simple session storage)
 * __dnkey__ (support for [DNKey](http://dnkey.org) and [BlockAuth](http://blockauth.org)
 
 ### API Module

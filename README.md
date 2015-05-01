@@ -9,9 +9,16 @@ For now, the following modules exist:
 * __cache__ (uses simple session storage)
 * __dnkey__ (support for [DNKey](http://dnkey.org) and [BlockAuth](http://blockauth.org)
 
+### Blockstrap Core
+
+Blockstrap core currently provides the following __public__ functions:
+
+* __debug__ (prettier object prints)
+* __get_var__ (better $_GET functionality)
+
 ### API Module
 
-The API module scurrently provides the following __public__ functions:
+The API module currently provides the following __public__ functions:
 
 * __address__ (mapped to address/transactions)
 * __block__ (mapped to block)
@@ -22,6 +29,20 @@ The API module scurrently provides the following __public__ functions:
 * __market__ (mapped to market/stats)
 * __relay__ (mapped to transaction/relay)
 * __transaction__ (mapped to transaction/id)
+
+### Cache Module
+
+The cache module currently provides the following __public__ functions:
+
+* __read__ (read from session storage)
+* __write__ (write to session storage)
+
+### DNKey Module
+
+The DNKey module currently provides the following __public__ functions:
+
+* __api__ (used if accessed via api module)
+* __get__ (used if from standalone include)
 
 --------------------------
 

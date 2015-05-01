@@ -38,6 +38,8 @@ The BlockAuth module currently provides the following __public__ functions:
 * __check__ (checks the supplied transaction to verify the supplied password)
 * __login__ (basic wrapper to first collect DNKey info if supplied before checking credentials)
 
+The API Module is required for the __check__ function to work.
+
 ### Cache Module
 
 The cache module currently provides the following __public__ functions:

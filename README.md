@@ -6,6 +6,7 @@ For now, the following modules exist:
 
 * __blockstrap__ (core)
 * __api__ (requires blockstrap and cache)
+* __blockauth__ (authentication via blockchains)
 * __cache__ (uses simple session storage)
 * __dnkey__ (support for [DNKey](http://dnkey.org) and [BlockAuth](http://blockauth.org)
 
@@ -29,6 +30,13 @@ The API module currently provides the following __public__ functions:
 * __market__ (mapped to market/stats)
 * __relay__ (mapped to transaction/relay)
 * __transaction__ (mapped to transaction/id)
+
+### BlockAuth Module
+
+The BlockAuth module currently provides the following __public__ functions:
+
+* __check__ (checks the supplied transaction to verify the supplied password)
+* __login__ (basic wrapper to first collect DNKey info if supplied before checking credentials)
 
 ### Cache Module
 

@@ -69,7 +69,7 @@ elseif($form == 'with')
 
 if($login && $form == 'without')
 {
-    echo '<span class="alert alert-success">YOU ARE LOGGED-IN</span>';
+    echo '<span class="alert alert-success">SUCCESSFULLY LOGGED-IN<br />Welcome back <strong>'.$login.'</strong></span>';
 }
 elseif($form == 'without')
 {

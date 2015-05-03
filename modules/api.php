@@ -25,25 +25,33 @@ class bs_api extends blockstrap
                     'base' => 'http://api.blockstrap.com/v0/btc/',
                     'name' => 'Bitcoin'
                 ),
-                'ltc' => array(
-                    'base' => 'http://api.blockstrap.com/v0/ltc/',
-                    'name' => 'Litecoin'
+                'dash' => array(
+                    'base' => 'http://api.blockstrap.com/v0/dash/',
+                    'name' => 'DashPay'
                 ),
                 'doge' => array(
                     'base' => 'http://api.blockstrap.com/v0/doge/',
                     'name' => 'Dogecoin'
                 ),
+                'ltc' => array(
+                    'base' => 'http://api.blockstrap.com/v0/ltc/',
+                    'name' => 'Litecoin'
+                ),
                 'btct' => array(
                     'base' => 'http://api.blockstrap.com/v0/btct/',
                     'name' => 'BTC Testnet'
                 ),
-                'ltct' => array(
-                    'base' => 'http://api.blockstrap.com/v0/ltct/',
-                    'name' => 'LTC Testnet'
+                'dasht' => array(
+                    'base' => 'http://api.blockstrap.com/v0/dasht/',
+                    'name' => 'DASH Testnet'
                 ),
                 'doget' => array(
                     'base' => 'http://api.blockstrap.com/v0/dogt/',
                     'name' => 'DOGE Testnet'
+                ),
+                'ltct' => array(
+                    'base' => 'http://api.blockstrap.com/v0/ltct/',
+                    'name' => 'LTC Testnet'
                 ),
                 'multi' => array(
                     'base' => 'http://api.blockstrap.com/v0/multi/',

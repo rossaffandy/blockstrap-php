@@ -26,7 +26,7 @@ $login = $auth->login(array(
 
 if($login && $form == 'with')
 {
-    echo '<span class="alert alert-success">YOU ARE LOGGED-IN</span>';
+    echo '<span class="alert alert-success">SUCCESSFULLY LOGGED-IN<br />Welcome back <strong>'.$login.'</strong></span>';
 }
 elseif($form == 'with')
 {

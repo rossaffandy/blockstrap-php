@@ -1,7 +1,7 @@
 <?php
 
-include_once '../modules/blockstrap.php';
-include_once '../modules/dnkey.php';
+//include_once '../modules/blockstrap.php';
+//include_once '../modules/dnkey.php';
 
 /**
  * User: Ross Affandy

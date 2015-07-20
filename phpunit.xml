@@ -6,8 +6,8 @@
         <testsuite name="Blockstrap SDK Test Suite">
             <directory>./test/</directory>
         </testsuite>
-
     </testsuites>
+
     <filter>
         <whitelist>
             <directory>./</directory>
@@ -16,4 +16,5 @@
             </exclude>
         </whitelist>
     </filter>
+
 </phpunit>

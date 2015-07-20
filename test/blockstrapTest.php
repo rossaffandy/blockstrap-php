@@ -1,5 +1,5 @@
 <?php
-include_once '../modules/blockstrap.php';
+//include_once '../modules/blockstrap.php';
 
 /**
  * User: Affandy

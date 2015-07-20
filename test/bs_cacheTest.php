@@ -1,6 +1,6 @@
 <?php
-include '../modules/blockstrap.php';
-include '../modules/cache.php';
+//include_once '../modules/blockstrap.php';
+//include_once '../modules/cache.php';
 
 /**
  * User: Ross Affandy
@@ -24,7 +24,7 @@ class bs_cacheTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         $_SESSION = bs_cacheTest::$shared_session;
-        $this->_testCache = new bs_cache();
+
     }
 
     public function tearDown()
@@ -39,9 +39,11 @@ class bs_cacheTest extends \PHPUnit_Framework_TestCase
         $value = 'testing';
         $term = '';
 
-        $this->_testCache->write($key, $value, $term);
+        $cache = new bs_cache();
 
-        $record = $this->_testCache->read($key, $term);
+        $cache->write($key, $value, $term);
+
+        $record = $cache->read($key, $term);
 
         $this->assertEquals($value, $record);
 

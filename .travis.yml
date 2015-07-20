@@ -26,9 +26,10 @@ matrix:
 before_script:
   - wget https://phar.phpunit.de/phpunit.phar
   - chmod +x phpunit.phar
-  - sudo mv phpunit.phar /usr/local/bin/phpunit
+  - mv phpunit.phar /usr/local/bin/phpunit
   - phpunit --self-update
 
 script:
   - phpunit --version
+
   - phpunit --configuration phpunit.xml --coverage-text

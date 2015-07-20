@@ -22,4 +22,11 @@ matrix:
   - hhvm
   fast_finish: true
   
-  script: phpunit --configuration phpunit.xml --coverage-text
+before_script:
+  - wget https://phar.phpunit.de/phpunit.phar
+  - chmod +x phpunit.phar
+  - sudo mv phpunit.phar /usr/local/bin/phpunit
+
+script:
+  - phpunit --version
+  - phpunit --configuration phpunit.xml --coverage-text

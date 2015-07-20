@@ -32,6 +32,8 @@ matrix:
     - php: hhvm
   
 before_script:
+  - sudo apt-get update
+  - sudo aptitude safe-upgrade
   - wget https://phar.phpunit.de/phpunit.phar
   - chmod +x phpunit.phar
   - sudo mv phpunit.phar /usr/local/bin/phpunit

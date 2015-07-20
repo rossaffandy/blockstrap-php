@@ -52,7 +52,7 @@ class bs_dnkey extends blockstrap
         //$this->debug($raw);
         $raw_results = array();
         
-        if(is_array($raw))
+        if(is_array($raw) && !empty($raw))
         {
             foreach($raw as $entry_key => $entry)
             {

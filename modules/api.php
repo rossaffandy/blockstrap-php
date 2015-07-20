@@ -15,7 +15,15 @@ class bs_api extends blockstrap
     public static $cache;
     public static $options;
     public static $blockchain = 'btc';
-    
+
+    // INITIATE API CLASS
+    function __construct($settings = array())
+    {
+        $this::$options = $this->defaults($settings);
+        $this::$cache = new bs_cache();
+    }
+
+
     // SET DEFAULT OPTIONS
     private function defaults($settings = array())
     {
@@ -62,6 +70,7 @@ class bs_api extends blockstrap
         $options = array_merge($defaults, $settings);
         return $options;
     }
+
     
     // SET DEFAULT API URL PARAMETERS
     private function parameters($options = array())
@@ -78,7 +87,8 @@ class bs_api extends blockstrap
         $settings = array_merge($defaults, $options);
         return $settings;
     }
-    
+
+
     // INITIATE CURL REQUEST
     private function get($options = array()) 
     {
@@ -96,6 +106,7 @@ class bs_api extends blockstrap
         return $ret;
     }
 
+
     // SHOW PUBLIC URL
     private function pub($options = array()) 
     {
@@ -106,6 +117,7 @@ class bs_api extends blockstrap
         return $this->url($parameters);
     }
 
+
     // SHOW PRIVATE URL
     private function priv($options = array()) 
     {
@@ -113,6 +125,7 @@ class bs_api extends blockstrap
         $parameters['prettyprint'] = 0;
         return $this->url($parameters);
     }
+
 
     // FORM URL FOR API REQUEST
     private function url($options = array()) 
@@ -172,14 +185,8 @@ class bs_api extends blockstrap
             return false;
         }
     }
-    
-    // INITIATE API CLASS
-    function __construct($settings = array())
-    {
-        $this::$options = $this->defaults($settings);
-        $this::$cache = new bs_cache();
-    }
-    
+
+
     // GET ADDRESS USING PUBLIC KEY
     public function address($settings = array())
     {
@@ -217,7 +224,8 @@ class bs_api extends blockstrap
         }
         return $data;
     }
-    
+
+
     // GET BLOCK USING HASH
     public function block($settings = array())
     {     
@@ -255,7 +263,8 @@ class bs_api extends blockstrap
         }
         return $data;
     }
-    
+
+
     // GET LATEST BLOCKS
     // ID EQUALS NUMBER TO RETURN
     public function blocks($settings = array())
@@ -294,7 +303,8 @@ class bs_api extends blockstrap
         }
         return $data;
     }
-    
+
+
     // DECODE RAW TRANSACTION
     public function decode($settings = array())
     {           
@@ -332,7 +342,8 @@ class bs_api extends blockstrap
         }
         return $data;
     }
-    
+
+
     public function dnkey($settings = array())
     {
         if(class_exists('bs_dnkey'))
@@ -345,7 +356,8 @@ class bs_api extends blockstrap
             return 'Need to make API call';
         }
     }
-    
+
+
     // GET BLOCK USING HEIGHT
     public function height($settings = array())
     {           
@@ -383,7 +395,8 @@ class bs_api extends blockstrap
         }
         return $data;
     }
-    
+
+
     // GET MARKET CONDITIONS
     public function market($settings = array())
     {          
@@ -421,7 +434,8 @@ class bs_api extends blockstrap
         }
         return $data;
     }
-    
+
+
     // RELAY RAW TRANSACTION
     public function relay($settings = array())
     {
@@ -459,7 +473,8 @@ class bs_api extends blockstrap
         }
         return $data;
     }
-    
+
+
     // GET TRANSACTION USING TXID
     public function transaction($settings = array())
     {           

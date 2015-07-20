@@ -11,7 +11,12 @@
  */
 
 class bs_blockauth extends blockstrap
-{   
+{
+    function __construct($settings = array())
+    {
+
+    }
+
     private function hex2str($hex){
         $string='';
         for ($i=0; $i < strlen($hex)-1; $i+=2){
@@ -19,11 +24,7 @@ class bs_blockauth extends blockstrap
         }
         return $string;
     }
-    
-    function __construct($settings = array())
-    {
-        
-    }
+
     
     public function check($txid, $uid, $blockchain, $pw)
     {

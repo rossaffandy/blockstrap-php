@@ -15,7 +15,13 @@ session_start();
 class bs_cache extends blockstrap
 {   
     public static $options;
-    
+
+    // INITIATE CLASS
+    function __construct($settings = array())
+    {
+        $this::$options = $this->defaults($settings);
+    }
+
     // SET DEFAULT OPTIONS
     private function defaults($settings = array())
     {
@@ -26,18 +32,13 @@ class bs_cache extends blockstrap
         return $options;
     }
     
-    // INITIATE CLASS
-    function __construct($settings = array())
-    {
-        $this::$options = $this->defaults($settings);
-    }
-    
     // GET CACHED RESULTS
     public function read($key, $term)
     {
         $value = false;
-        $date = new DateTime();
-        $now = $date->format('U');
+
+        $now = $this->generateDate();
+
         if(isset($_SESSION) && isset($_SESSION[$key]))
         {
             $record = json_decode($_SESSION[$key], true);
@@ -59,11 +60,19 @@ class bs_cache extends blockstrap
     // SAVE RESULTS TO CACHE
     public function write($key, $value, $term)
     {
-        $date = new DateTime();
-        $now = $date->format('U');
+        $now = $this->generateDate();
+
         $_SESSION[$key] = json_encode(array(
             'ts' => $now,
             'data' => $value
         ));
+
+        return true;
+    }
+
+    private function generateDate() {
+        $date = new DateTime();
+        $now = $date->format('U');
+        return $now;
     }
 }

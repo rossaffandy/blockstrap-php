@@ -13,7 +13,13 @@
 class blockstrap 
 {
     public static $options;
-    
+
+    // INITIATE CLASS
+    function __construct($settings = array())
+    {
+        $this::$options = $this->defaults($settings);
+    }
+
     // SET DEFAULT OPTIONS
     private function defaults($settings = array())
     {
@@ -22,12 +28,6 @@ class blockstrap
         );
         $options = array_merge($defaults, $settings);
         return $options;
-    }
-    
-    // INITIATE CLASS
-    function __construct($settings = array())
-    {
-        $this::$options = $this->defaults($settings);
     }
     
     // BETTER PRINT_R

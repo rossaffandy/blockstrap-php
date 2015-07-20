@@ -10,7 +10,6 @@ php:
   - 5.4
   - 5.5
   - 5.6
-  - 7.0
   - hhvm
 
 matrix:
@@ -20,7 +19,6 @@ matrix:
     - php: 5.4
     - php: 5.5
     - php: 5.6
-    - php: 7.0
     - php: hhvm
   allow_failures:
     - php: 5.2
@@ -28,7 +26,6 @@ matrix:
     - php: 5.4
     - php: 5.5
     - php: 5.6
-    - php: 7.0
     - php: hhvm
   
 before_script:
@@ -37,8 +34,8 @@ before_script:
   - wget https://phar.phpunit.de/phpunit.phar
   - chmod +x phpunit.phar
   - sudo mv phpunit.phar /usr/local/bin/phpunit
-  - phpunit --self-update
+  - /usr/local/bin/phpunit --self-update
 
 script:
-  - phpunit --version
-  - phpunit --configuration phpunit.xml --coverage-text
+  - /usr/local/bin/phpunit --version
+  - /usr/local/bin/phpunit --configuration phpunit.xml --coverage-text

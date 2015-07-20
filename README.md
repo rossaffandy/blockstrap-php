@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/rossaffandy/blockstrap-php.svg?branch=UnitTest)](https://travis-ci.org/rossaffandy/blockstrap-php)
+
 ## Blockstrap PHP SDK
 
 The long-term plan for all of our SDKs is to recreate the full-functionality of our [HTML5 Framework](http://github.com/blockstrap/framework).

@@ -24,8 +24,7 @@ matrix:
     - php: hhvm
   
 before_script:
-  - sudo apt-get update
-  - sudo apt-get -o Dpkg::Options::='--force-confdef' -o Dpkg::Options::='--force-confold' upgrade
+  - sudo update-ca-certificates
   - wget https://phar.phpunit.de/phpunit.phar
   - chmod +x phpunit.phar
   - sudo mv phpunit.phar /usr/local/bin/phpunit

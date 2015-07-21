@@ -1,6 +1,4 @@
 <?php
-//include_once '../modules/blockstrap.php';
-//include_once '../modules/cache.php';
 
 /**
  * User: Ross Affandy

@@ -1,14 +1,10 @@
 <?php
 
-//include_once '../modules/blockstrap.php';
-//include_once '../modules/dnkey.php';
-
 /**
  * User: Ross Affandy
  * Date: 20/7/2015
  * Time: 9:51 AM
  */
-
 
 class bs_dnkeyTest extends \PHPUnit_Framework_TestCase
 {

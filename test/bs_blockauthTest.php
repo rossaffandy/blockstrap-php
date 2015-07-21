@@ -5,6 +5,7 @@
  * Date: 21/7/2015
  * Time: 11:00 AM
  */
+
 class bs_blockauthTest extends \PHPUnit_Framework_TestCase
 {
 

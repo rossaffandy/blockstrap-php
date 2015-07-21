@@ -25,7 +25,13 @@ before_script:
   - chmod +x phpunit.phar
   - sudo mv phpunit.phar /usr/local/bin/phpunit
   - /usr/local/bin/phpunit --self-update
+  - wget http://getcomposer.org/composer.phar
+  - php composer.phar install --dev --no-interaction
 
 script:
   - /usr/local/bin/phpunit --version
-  - /usr/local/bin/phpunit --configuration phpunit.xml --coverage-text
+  - mkdir -p build/logs
+  - phpunit --coverage-clover build/logs/clover.xml
+
+after_script:
+   - php vendor/bin/coveralls -v

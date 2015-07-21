@@ -26,7 +26,7 @@ before_script:
   - sudo mv phpunit.phar /usr/local/bin/phpunit
   - /usr/local/bin/phpunit --self-update
   - composer self-update
-  - php composer install --dev --no-interaction
+  - composer install --dev --no-interaction
 
 script:
   - /usr/local/bin/phpunit --version

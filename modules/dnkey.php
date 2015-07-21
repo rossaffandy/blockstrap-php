@@ -17,7 +17,7 @@ class bs_dnkey extends blockstrap
     {
         
     }
-    
+
     public function api($options = array())
     {
         if(isset($options['chain']) && isset($options['id']))
@@ -33,7 +33,7 @@ class bs_dnkey extends blockstrap
             return false;
         }
     }
-    
+
     public function get($options = array())
     {
         $defaults = array(
@@ -48,22 +48,22 @@ class bs_dnkey extends blockstrap
         $results = array(
             'success' => false
         );
-        
+
         //$this->debug($raw);
         $raw_results = array();
-        
+
         if(is_array($raw) && !empty($raw))
         {
             foreach($raw as $entry_key => $entry)
             {
                 if(
-                    isset($entry['entries']) 
+                    isset($entry['entries'])
                     && substr($entry['entries'][0], 0, strlen($settings['key'])) === $settings['key']
                 ){
                     $key_array = explode('-', $entry['entries'][0]);
                     if(
-                        isset($key_array[1]) 
-                        && $key_array[1] == 'blockauth' 
+                        isset($key_array[1])
+                        && $key_array[1] == 'blockauth'
                         && isset($key_array[2])
                         && (
                             $settings['type'] == 'multi'
@@ -105,7 +105,7 @@ class bs_dnkey extends blockstrap
                                     || !$settings['type']
                                 )
                             )
-                            
+
                         ){
                             if(!isset($raw_results[$result_array[0]]))
                             {

@@ -35,7 +35,7 @@ class bs_blockauth extends blockstrap
                 'chain' => $blockchain,
                 'id' => $txid
             ));
-            if(isset($tx['outputs']) && is_array($tx['outputs']) && count($tx['outputs']) > 0)
+            if(isset($tx['outputs']) && is_array($tx['outputs']) && count($tx['outputs']) > 0) //should use array_key_exists?
             {
                 foreach($tx['outputs'] as $out_key => $output)
                 {

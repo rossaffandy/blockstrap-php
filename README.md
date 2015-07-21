@@ -60,6 +60,8 @@ The DNKey module currently provides the following __public__ functions:
 * __api__ (used if accessed via api module)
 * __get__ (used if from standalone include)
 
+### Unit Test
+phpunit --configuration phpunit.xml --coverage-text
 --------------------------
 
 For more information, please visit - [docs.blockstrap.com](http://docs.blockstrap.com)

@@ -102,7 +102,7 @@ class bs_api extends blockstrap
         curl_setopt($ch, CURLOPT_TIMEOUT, 600);
         $response = curl_exec($ch);
         curl_close($ch);
-        $ret= json_decode($response, true);
+        $ret = @json_decode($response, true, 512, JSON_BIGINT_AS_STRING); //fixing integer overflow
         return $ret;
     }
 
@@ -296,7 +296,7 @@ class bs_api extends blockstrap
         {
             $data = $results;
         }
-        else if(isset($results['status']) && $results['status'] == 'success')
+        else if(isset($results['status'], $results['data']['blocks']) && $results['status'] === 'success')
         {
             $blocks = $results['data']['blocks'];
             $data = $blocks;
@@ -335,7 +335,7 @@ class bs_api extends blockstrap
         {
             $data = $results;
         }
-        else if(isset($results['status']) && $results['status'] == 'success')
+        else if(isset($results['status']) && $results['status'] === 'success')
         {
             $tx = $results['data'];
             $data = $tx;
@@ -388,7 +388,7 @@ class bs_api extends blockstrap
         {
             $data = $results;
         }
-        else if(isset($results['status']) && $results['status'] == 'success')
+        else if(isset($results['status']) && $results['status'] === 'success')
         {
             $block = $results['data']['blocks'][0];
             $data = $block;
@@ -427,7 +427,7 @@ class bs_api extends blockstrap
         {
             $data = $results;
         }
-        else if(isset($results['status']) && $results['status'] == 'success')
+        else if(isset($results['status']) && isset($results['data']['markets']) && $results['status'] === 'success')
         {
             $market = $results['data']['markets'];
             $data = $market;
@@ -466,7 +466,7 @@ class bs_api extends blockstrap
         {
             $data = $results;
         }
-        else if(isset($results['status']) && $results['status'] == 'success')
+        else if(isset($results['status']) && $results['status'] === 'success')
         {
             $tx = $results['data'];
             $data = $tx;
@@ -505,7 +505,7 @@ class bs_api extends blockstrap
         {
             $data = $results;
         }
-        else if(isset($results['status']) && $results['status'] == 'success')
+        else if(isset($results['status']) && $results['status'] === 'success')
         {
             $tx = $results['data']['transaction'];
             $data = $tx;

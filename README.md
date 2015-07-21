@@ -64,6 +64,27 @@ The DNKey module currently provides the following __public__ functions:
 
 phpunit --configuration phpunit.xml --coverage-text
 
+```php
+Code Coverage Report:
+  2015-07-21 13:31:57
+
+ Summary:
+  Classes:  0.00% (0/5)
+  Methods: 46.88% (15/32)
+  Lines:   39.29% (288/733)
+
+@bs::bs_api
+  Methods:  31.25% ( 5/16)   Lines:  63.24% (215/340)
+@bs::bs_blockauth
+  Methods:  25.00% ( 1/ 4)   Lines:  20.31% ( 13/ 64)
+@bs::bs_cache
+  Methods:  80.00% ( 4/ 5)   Lines:  92.86% ( 26/ 28)
+@bs::bs_dnkey
+  Methods:  66.67% ( 2/ 3)   Lines:  23.81% ( 20/ 84)
+blockstrap
+  Methods:  75.00% ( 3/ 4)   Lines:  77.78% ( 14/ 18)
+```
+
 --------------------------
 
 For more information, please visit - [docs.blockstrap.com](http://docs.blockstrap.com)

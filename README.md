@@ -63,7 +63,7 @@ The DNKey module currently provides the following __public__ functions:
 
 ### Unit Test
 
-phpunit --configuration phpunit.xml --coverage-text
+phpunit --coverage-text
 
 ```php
 Code Coverage Report:

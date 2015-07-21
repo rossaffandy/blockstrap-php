@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/rossaffandy/blockstrap-php.svg?branch=UnitTest)](https://travis-ci.org/rossaffandy/blockstrap-php)
+[![Coverage Status](https://coveralls.io/repos/rossaffandy/blockstrap-php/badge.svg?branch=UnitTest&service=github)](https://coveralls.io/github/rossaffandy/blockstrap-php?branch=UnitTest)
 
 ## Blockstrap PHP SDK
 

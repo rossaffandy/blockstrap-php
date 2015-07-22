@@ -36,4 +36,4 @@ include_once(dirname(__FILE__).'/../modules/blockstrap.php');
 include_once(dirname(__FILE__).'/../modules/api.php');
 include_once(dirname(__FILE__).'/../modules/cache.php');
 include_once(dirname(__FILE__).'/../modules/dnkey.php');
-include_once(dirname(__FILE__).'/../modules/blockauth.php');0
+include_once(dirname(__FILE__).'/../modules/blockauth.php');

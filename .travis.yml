@@ -28,7 +28,7 @@ before_script:
   - sudo mv phpunit.phar /usr/local/bin/phpunit
   - /usr/local/bin/phpunit --self-update
   - composer self-update
-  - composer install
+  - travis_wait composer install
 
 script:
   - /usr/local/bin/phpunit --version

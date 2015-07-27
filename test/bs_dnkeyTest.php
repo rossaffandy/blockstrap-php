@@ -12,6 +12,46 @@ class bs_dnkeyTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
+        $this->settings = array(
+            'blockchains' => array(
+                'btc' => array(
+                    'base' => 'http://api.blockstrap.com/v0/btc/',
+                    'name' => 'Bitcoin'
+                ),
+                'dash' => array(
+                    'base' => 'http://api.blockstrap.com/v0/dash/',
+                    'name' => 'DashPay'
+                ),
+                'doge' => array(
+                    'base' => 'http://api.blockstrap.com/v0/doge/',
+                    'name' => 'Dogecoin'
+                ),
+                'ltc' => array(
+                    'base' => 'http://api.blockstrap.com/v0/ltc/',
+                    'name' => 'Litecoin'
+                ),
+                'btct' => array(
+                    'base' => 'http://api.blockstrap.com/v0/btct/',
+                    'name' => 'BTC Testnet'
+                ),
+                'dasht' => array(
+                    'base' => 'http://api.blockstrap.com/v0/dasht/',
+                    'name' => 'DASH Testnet'
+                ),
+                'doget' => array(
+                    'base' => 'http://api.blockstrap.com/v0/dogt/',
+                    'name' => 'DOGE Testnet'
+                ),
+                'ltct' => array(
+                    'base' => 'http://api.blockstrap.com/v0/ltct/',
+                    'name' => 'LTC Testnet'
+                ),
+                'multi' => array(
+                    'base' => 'http://api.blockstrap.com/v0/multi/',
+                    'name' => 'Multiple Currencies'
+                )
+            )
+        );
 
     }
 
@@ -23,9 +63,9 @@ class bs_dnkeyTest extends \PHPUnit_Framework_TestCase
     public function testApiWrongSettingFailure()
     {
         $settings = array();
-        $this->_dnkey = new bs_dnkey($settings);
+        $this->_dnkey = new bs_dnkey($this->settings);
 
-        $options = array('chain' => 'btc', 'id' => '1JsoyFgFugGRRY7qkPGTHaKVQpeqf67VVb');
+        $options = array('chain' => 'btc', 'id' => 'blockstrap.com');
         $result = $this->_dnkey->api($options);
 
         $this->assertContains(false, $result);

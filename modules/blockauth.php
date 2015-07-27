@@ -42,10 +42,14 @@ class bs_blockauth extends blockstrap
                     if($output['script_pub_key'] && !$output['pubkey_hash'])
                     {
                         $msg = $this->hex2str($output['script_pub_key']);
-                        if($msg[3] == '{')
+
+                        if(count($msg) == 3 && $msg[3] == '{')
                         {
                             $msg = json_decode(substr($msg, 3, strlen($msg)), true);
+                        } else {
+                            return false;
                         }
+
                         if(isset($msg['n']) && isset($msg['pw']))
                         {
                             $password = hash('sha256', $uid.hash('sha256', $pw));

@@ -234,7 +234,7 @@ class bs_api extends blockstrap
         $defaults = array(
             'debug' => false,
             'details' => false,
-            'method' => 'block',
+            'method' => 'block/id',
             'chain' => $this::$blockchain,
             'base' => $this::$options['blockchains'][$this::$blockchain]['base'],
             'id' => 0,
@@ -427,9 +427,9 @@ class bs_api extends blockstrap
         {
             $data = $results;
         }
-        else if(isset($results['status']) && isset($results['data']['markets']) && $results['status'] === 'success')
+        else if(isset($results['status']) && isset($results['data']['market']) && $results['status'] === 'success')
         {
-            $market = $results['data']['markets'];
+            $market = $results['data']['market'];
             $data = $market;
         }
         return $data;

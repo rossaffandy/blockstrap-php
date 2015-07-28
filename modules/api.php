@@ -512,4 +512,42 @@ class bs_api extends blockstrap
         }
         return $data;
     }
+
+    // GET UNSPENT USING ADDRESS
+    public function unspent($settings = array())
+    {
+        $data = false;
+        // MAKE API CALL
+        $defaults = array(
+            'debug' => false,
+            'details' => false,
+            'method' => 'address/unspents',
+            'chain' => $this::$blockchain,
+            'base' => $this::$options['blockchains'][$this::$blockchain]['base'],
+            'id' => 0,
+            'showtxn' => 0,
+            'showtxnio' => 1
+        );
+        $options = array_merge($defaults, $settings);
+        $key = 'unspent_'.$options['chain'].'_'.$options['id'];
+        $results = $this::$cache->read($key, 'shortterm');
+        if(!$results){
+            $results = $this->get($options);
+            $this::$cache->write($key, $results, 'shortterm');
+        }
+        elseif($options['debug'] === true)
+        {
+            $this->url($options);
+        }
+        if($options['details'] === true)
+        {
+            $data = $results;
+        }
+        else if(isset($results['status']) && $results['status'] === 'success')
+        {
+            $unspent = $results['data']['address'];
+            $data = $unspent;
+        }
+        return $data;
+    }
 }

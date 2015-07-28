@@ -119,6 +119,8 @@ class bs_apiTest extends \PHPUnit_Framework_TestCase
     */
 
     public function testmarketSuccess() {
+        //this is slow because we test real api address
+        //should just let only acceptance test run this code?
         $api = new bs_api($this->settings);
         $result = $api->market();
         $this->assertArrayHasKey('block_count_24hr', $result);
@@ -134,5 +136,23 @@ class bs_apiTest extends \PHPUnit_Framework_TestCase
         $api = new bs_api();
         $result = $api->transaction();
         $this->assertFalse($result);
+    }
+
+    public function testUnspentSuccess(){
+        //this is slow because we test real api address
+        //should just let only acceptance test run this code?
+        $address = array('id' => '1FfmbHfnpaZjKFvyi1okTjJJusN455paPH'); //bitcoin address
+        $api = new bs_api($this->settings);
+        $result = $api->unspent($address);
+        $this->assertContains('id', $result);
+    }
+
+    public function testUnspentFailure(){
+        //this is slow because we test real api address
+        //should just let only acceptance test run this code?
+        $address = array('id' => '123'); //bitcoin address
+        $api = new bs_api($this->settings);
+        $result = $api->unspent($address);
+        $this->assertNotContains('id', $result);
     }
 }

@@ -62,7 +62,6 @@ class bs_dnkeyTest extends \PHPUnit_Framework_TestCase
 
     public function testApiWrongSettingFailure()
     {
-        $settings = array();
         $this->_dnkey = new bs_dnkey($this->settings);
 
         $options = array('chain' => 'btc', 'id' => 'blockstrap.com');
@@ -79,6 +78,14 @@ class bs_dnkeyTest extends \PHPUnit_Framework_TestCase
 
         $result = $this->_dnkey->api();
         $this->assertFalse($result);
+    }
 
+    public function testApigetFailure()
+    {
+        $this->_dnkey = new bs_dnkey($this->settings);
+
+        $options = array('host' => 'blockstrap.com');
+        $result = $this->_dnkey->get($options);
+        $this->assertContains(false, $result);
     }
 }

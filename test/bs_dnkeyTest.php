@@ -70,7 +70,6 @@ class bs_dnkeyTest extends \PHPUnit_Framework_TestCase
         $this->assertContains(false, $result);
     }
 
-
     public function testApiNoSettingFailure()
     {
         $array = array();
@@ -87,5 +86,14 @@ class bs_dnkeyTest extends \PHPUnit_Framework_TestCase
         $options = array('host' => 'blockstrap.com');
         $result = $this->_dnkey->get($options);
         $this->assertContains(false, $result);
+    }
+
+    public function testApigetSuccess()
+    {
+        $this->_dnkey = new bs_dnkey($this->settings);
+
+        $options = array('host' => 'mark.neuroware.io');
+        $result = $this->_dnkey->get($options);
+        $this->assertContains(true, $result);
     }
 }
